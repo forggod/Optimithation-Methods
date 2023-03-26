@@ -32,4 +32,4 @@ class GoldenRatio:
                 x = y
                 y = sl + sr - y
             k += 1
-        return (sl + sr) / 2, k
+        return round((sl + sr) / 2, 4), k
