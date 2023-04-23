@@ -16,7 +16,7 @@ def function_tk(x):
     x1, x2 = x
     t1 = round((4 * x1 + x2) ** 2 + (x1 + 2 * x2) ** 2, 4)
     t2 = round(4 * (4 * x1 + x2) ** 2 + 2 * (4 * x1 + x2) * (x1 + 2 * x2) + 2 * (x1 + 2 * x2) ** 2, 4)
-    t = t1 / t2
+    t = round(t1 / t2, 4)
     print(f'\t\t{t1}')
     print(f'\ttk= ------')
     print(f'\t\t{t2}')
