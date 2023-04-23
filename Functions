@@ -1,0 +1,9 @@
+First function
+    x1^2 + 5*x2^2 + x1*x2 + x1
+    M = 50
+    e1 = 0.01
+    e2 = 0.105
+
+Second function
+    3 * x^2 + 4 * x2^2 - 2 * x1 * x2 + x1
+    x1 + x2 = 1
