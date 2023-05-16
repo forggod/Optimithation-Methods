@@ -28,8 +28,8 @@ def tr_hesse(h):
 
 def function_tk(x):
     x1, x2 = x
-    t1 = round((4 * x1 + x2) ** 2 + (x1 + 2 * x2) ** 2, 4)
-    t2 = round(4 * (4 * x1 + x2) ** 2 + 2 * (4 * x1 + x2) * (x1 + 2 * x2) + 2 * (x1 + 2 * x2) ** 2, 4)
+    t1 = round((2 * x1 + x2 + 1) ** 2 + (10 * x2 + x1) ** 2, 4)
+    t2 = round(2 * (2 * x1 + x2 + 1) ** 2 + 10 * (10 * x2 + x1) ** 2 + 2 * (2 * x1 + x2 + 1) * (10 * x2 + x1), 4)
     t = round(t1 / t2, 4)
     print(f'\t\t{t1}')
     print(f'\ttk= ------')
@@ -73,9 +73,10 @@ def newton_method(x, m=50, e1=1e-2, e2=105e-3):
             dk = [-el for el in fg]
 
         xk = [round(x[i] + dk[i], 4) for i in [0, 1]]
-        print(f'\tШаг 9. {x}')
+        print(f'\tШаг 9. {xk}   {dk}')
 
         tk = function_tk(xk)
+
         print(f'\tШаг 10. {tk}')
 
         xk = [round(x[i] + tk * dk[i], 4) for i in [0, 1]]
