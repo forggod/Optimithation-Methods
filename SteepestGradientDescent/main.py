@@ -15,7 +15,8 @@ def function_gradient(x):
 def function_tk(x):
     x1, x2 = x
     t1 = round((2 * x1 + x2 + 1) ** 2 + (10 * x2 + x1) ** 2, 4)
-    t2 = round(2 * (2 * x1 + x2 + 1) ** 2 + 10 * (10 * x2 + x1) ** 2 + 2 * (2 * x1 + x2 + 1) * (10 * x2 + x1), 4)
+    t2 = round(2 * (2 * x1 + x2 + 1) ** 2 + 10 * (10 * x2 + x1) ** 2 +
+               2 * (2 * x1 + x2 + 1) * (10 * x2 + x1), 4)
     t = round(t1 / t2, 4)
     print(f'\t\t{t1}')
     print(f'\ttk= ------')

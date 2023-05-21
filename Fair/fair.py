@@ -37,27 +37,34 @@ def function_tk(x):
     return t
 
 
-def newton_method(x, m=50, e1=1e-2, e2=105e-3):
-    print(f'Функция: f(x) = x1^2 + 5x2^2 + x1x2 + x1')
-    print(f'\tx0 = ({x[0]}, {x[1]})\n   \tM = {m}\n   \te1 = {e1}\n   \te2 = {e2}')
-    k, xk, dk = 0, 0, 0
-    while True:
+def newton_method(param):
+    print(f'Функция: f(x) = x1^2 + 5x2^2 + x1x2 + x1 \n    \t\tg(x) = 2x1 + 3x2')
+    k, x, f, g = 0, [0, 0], 0, 0
+    while k < 6:
         print(f'\nk = {k}')
-        fg = function_gradient(x)
-        print(f'\tШаг 3. {fg}')
 
-        norma = round(math.sqrt(fg[0] ** 2 + fg[1] ** 2), 4)
-        print(f'\tШаг 4. {norma} < {e1} ?')
-        if norma < e1:
-            print(f'x = {x}')
-            return x, k
+        if k == 5:
+            print(f'rk = oo')
+            x[0] = 1
+        else:
+            print(f'rk = {param[k]}')
+            x[0] = param[k] ** k / (1 + param[k] ** k)
+        x[1] = (x[0] + 0.2) / 0.6
+        print(f'x = {x}')
 
-        x = xk
+        f = (2 * x[0] ** 2 + x[1] ** 2 - x[0] * x[1] + x[0])
+        if k != 5:
+            f += param[k] ** k / 2 * (x[0] + x[1] - 3) ** 2
+        print(f'F = {f}')
+
+        if k == 5:
+            g = -3
+        else:
+            g = param[k] * (x[0] + x[1] - 3)
+        print(f'rk = {g}')
+
         k += 1
 
 
-x0 = [1, 1]
-method = newton_method(x0)
-print()
-print(f'Кол-во итераций: {method[1]}')
-print(f'Значение точки: x = {method[0]}')
+if __name__ == "__main__":
+    newton_method([1, 2, 10, 100, 1000])
