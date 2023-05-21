@@ -75,7 +75,7 @@ def newton_method(x, m=50, e1=1e-2, e2=105e-3):
         xk = [round(x[i] + dk[i], 4) for i in [0, 1]]
         print(f'\tШаг 9. {xk}   {dk}')
 
-        tk = function_tk(xk)
+        tk = 1
 
         print(f'\tШаг 10. {tk}')
 
@@ -96,4 +96,4 @@ x0 = [1, 1]
 method = newton_method(x0)
 print()
 print(f'Кол-во итераций: {method[1]}')
-print(f'Значение точки: x = {method[0]}')
+print(f'Значение точки: x = {(method[0][0]+method[0][1])/2}')

@@ -64,4 +64,4 @@ x0 = [1, 1]
 method = steepest_gradient_descent_method(x0)
 print()
 print(f'Кол-во итераций: {method[1]}')
-print(f'Значение точки: x = {method[0]}')
+print(f'Значение точки: x = {(method[0][0]+method[0][1])/2}')
