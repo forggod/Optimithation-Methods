@@ -27,7 +27,7 @@ def fair_method(param):
         print(f'F = {f}')
 
         if k == 5:
-            g = 0
+            g = 2*x[0] + 3*x[1]
         else:
             g = param[k] * (2*x[0] + 3*x[1])
         print(f'l1(rk) = {g}')

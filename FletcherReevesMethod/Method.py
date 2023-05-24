@@ -78,4 +78,4 @@ def fletcherReevesMethod(x, m=50, e1=1e-2, e2=105e-3):
 method = fletcherReevesMethod((1, 1))
 print()
 print(f'Кол-во итераций: {method[1]}')
-print(f'Значение точки: x = {(method[0][0] + method[0][1]) / 2}')
+print(f'Точка: x = {method[0]}')
